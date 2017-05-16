@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Zane.When2Buy.PublicEnum;
 
-namespace Zane.When2Buy.Crawler
+namespace Zane.When2Buy
 {
     public class GoodsEntity
     {

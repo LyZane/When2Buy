@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zane.When2Buy.Interface;
 
 namespace Zane.When2Buy.Crawler
 {
-    public static class Launcher
+    public class Configuration
     {
-        public static void Start()
-        {
-
-        }
+        public IStorage Storage{get;internal set;}
     }
 }

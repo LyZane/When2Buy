@@ -15,5 +15,6 @@ namespace Zane.When2Buy
             Tmall = 3,
             TaoBao = 4
         }
+        
     }
 }
