@@ -34,8 +34,8 @@ namespace Zane.When2Buy.Crawler
             }
             var pageModel = QueryPageModel(step.OriginalUrl);
             result = pageModel.Crawler(step);
-            result.Key = step.Key;
-            _Storage.SavePageResult(result);
+            result.TaskKey = step.Key;
+            _Storage.AddOrUpdatePageResult(result);
             return result;
         }
 
@@ -50,7 +50,7 @@ namespace Zane.When2Buy.Crawler
             }
             return null;
         }
-        public static CrawlerStep CreateCrawlerStep(Uri uri)
+        public static CrawlTask CreateCrawlerStep(Uri uri)
         {
             var pageModel = QueryPageModel(uri);
             if (pageModel==null)
@@ -58,7 +58,7 @@ namespace Zane.When2Buy.Crawler
                 return null;
             }
             var step = pageModel.CreateCrawlerStep(uri);
-            _Storage.SaveCrawlerStep(step);
+            _Storage.AddCrawlTask(step);
             return step;
         }
     }

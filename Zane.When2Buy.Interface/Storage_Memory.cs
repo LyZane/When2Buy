@@ -10,18 +10,18 @@ namespace Zane.When2Buy.Interface
     {
 
         Dictionary<string, PageResult> PageResultList = new Dictionary<string, PageResult>();
-        Dictionary<string, CrawlerStep> CrawlerStepList = new Dictionary<string, CrawlerStep>();
-        public CrawlerStep GetCrawlerStep()
+        Dictionary<string, CrawlTask> CrawlerStepList = new Dictionary<string, CrawlTask>();
+        public CrawlTask GetCrawlerStep()
         {
             throw new NotImplementedException();
         }
 
-        public CrawlerStep GetCrawlerStepById(string id)
+        public CrawlTask GetCrawlerStepById(string id)
         {
             throw new NotImplementedException();
         }
 
-        public CrawlerStep GetCrawlerStepByKey(string key)
+        public CrawlTask GetCrawlerStepByKey(string key)
         {
             if (CrawlerStepList.ContainsKey(key))
             {
@@ -39,14 +39,14 @@ namespace Zane.When2Buy.Interface
             return null;
         }
 
-        public void SaveCrawlerStep(CrawlerStep step)
+        public void AddCrawlTask(CrawlTask step)
         {
             CrawlerStepList[step.Key] = step;
         }
 
-        public void SavePageResult(PageResult result)
+        public void AddOrUpdatePageResult(PageResult result)
         {
-            PageResultList[result.Key] = result;
+            PageResultList[result.TaskKey] = result;
         }
     }
 }

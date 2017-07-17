@@ -14,18 +14,18 @@ namespace Zane.When2Buy.Crawler
         internal abstract GoodsSource GoodsSource { get; }
         
 
-        internal CrawlerStep CreateCrawlerStep(Uri uri)
+        internal CrawlTask CreateCrawlerStep(Uri uri)
         {
             if (!IsMatch(uri))
             {
                 throw new Exception("页面模型不匹配");
             }
-            var result = new CrawlerStep(this.GoodsSource, uri, GoodsSource+":"+GetPageKey(uri), StandardizeUrl(uri));
+            var result = new CrawlTask(this.GoodsSource, uri, GoodsSource+":"+GetPageKey(uri), StandardizeUrl(uri));
             return result;
         }
         internal abstract bool IsMatch(Uri uri);
         protected abstract string StandardizeUrl(Uri uri);
         protected abstract string GetPageKey(Uri uri);
-        internal abstract PageResult Crawler(CrawlerStep step);
+        internal abstract PageResult Crawler(CrawlTask step);
     }
 }

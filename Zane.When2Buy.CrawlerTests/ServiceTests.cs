@@ -14,6 +14,7 @@ namespace Zane.When2Buy.Crawler.Tests
     {
         public ServiceTests()
         {
+            //new Zane.When2Buy.SQLiteStorage.Service("SqliteTest")
             Zane.When2Buy.Crawler.GlobalConfiguration.CurrentConfiguration.SetStorage(new Storage_Memory()).Startup();
         }
 

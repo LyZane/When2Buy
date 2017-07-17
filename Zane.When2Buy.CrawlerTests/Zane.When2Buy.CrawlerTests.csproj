@@ -72,6 +72,10 @@
       <Project>{dc6c61af-9f41-4cf5-989d-777b248f69d0}</Project>
       <Name>Zane.When2Buy.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Zane.When2Buy.SQLiteStorage\Zane.When2Buy.SQLiteStorage.csproj">
+      <Project>{1e135b10-8097-4f7c-8448-2084d7a70c56}</Project>
+      <Name>Zane.When2Buy.SQLiteStorage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

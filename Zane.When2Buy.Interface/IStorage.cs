@@ -9,13 +9,13 @@ namespace Zane.When2Buy.Interface
 {
     public interface IStorage
     {
-        CrawlerStep GetCrawlerStep();
-        CrawlerStep GetCrawlerStepById(string id);
-        CrawlerStep GetCrawlerStepByKey(string key);
+        CrawlTask GetCrawlerStep();
+        CrawlTask GetCrawlerStepById(string id);
+        CrawlTask GetCrawlerStepByKey(string key);
 
-        void SaveCrawlerStep(CrawlerStep step);
+        void AddCrawlTask(CrawlTask step);
 
-        void SavePageResult(PageResult result);
+        void AddOrUpdatePageResult(PageResult result);
 
         PageResult QueryPageResult(string key);
     }

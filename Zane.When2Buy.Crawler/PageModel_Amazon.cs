@@ -24,7 +24,7 @@ namespace Zane.When2Buy.Crawler
             return "https://www.amazon.cn/gp/product/" + uri.AbsoluteUri.Match("(?<=www.amazon.cn/gp/product/)[0-9a-z]+");
         }
 
-        internal override PageResult Crawler(CrawlerStep step)
+        internal override PageResult Crawler(CrawlTask step)
         {
             PageResult result = new PageResult();
             var response = Browser.DownloadString(step.OriginalUrl);

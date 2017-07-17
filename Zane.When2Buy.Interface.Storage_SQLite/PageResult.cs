@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zane.When2Buy
+namespace Zane.When2Buy.Interface.Storage_SQLite
 {
     public class PageResult
     {

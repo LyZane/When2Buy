@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Zane.When2Buy.PublicEnum;
-using Zane.Common.Extensions.Base;
-namespace Zane.When2Buy
+
+namespace Zane.When2Buy.Interface.Storage_SQLite
 {
-    public class GoodsEntity
+    public class GoodsEntity_Current
     {
         public string GoodsKey { get; set; }
         public Uri Uri { get; set; }
@@ -19,15 +19,5 @@ namespace Zane.When2Buy
         public string Name { get; set; }
         public string Specification { get; set; }
         public GoodsSource GoodsSource { get; set; }
-        
-        /// <summary>
-        /// 视图唯一标识，当商品的名称或价格发生变化时，此标识会变更。
-        /// </summary>
-        public string ViewKey { get; set; }
-
-        public void SetViewKey()
-        {
-            this.ViewKey = (GoodsKey + Name + Price).MD5Encrypt();
-        }
     }
 }
